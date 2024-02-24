@@ -26,8 +26,8 @@ rails g devise user
 ```
 
 # TODO
-Fix login page
-https://github.com/achaconm2001/linktree-ui-deanout/blob/main/src/app/login/page.tsx#L159
+IFrame needs default size, looks ridiculous with no links.
+Creating links should use Turbo because page reloads are cringe.
 
 # ACCESIBILITY EVERYWHERE
 
@@ -37,3 +37,9 @@ https://v1.tailwindcss.com/components/cards
 https://tw-elements.com/docs/standard/forms/login-form/#
 https://webcrunch.com/posts/svg-icons-with-ruby-on-rails
 https://tailwindcss.com/docs/
+Email Resend
+https://resend.com/ 
+
+# References
+Fix login page (Courtesy of Chamir)
+https://github.com/achaconm2001/linktree-ui-deanout/blob/main/src/app/login/page.tsx#L159
