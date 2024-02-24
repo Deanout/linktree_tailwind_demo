@@ -45,7 +45,7 @@
             <div class="text-center font-bold text-white"><%= @user.username %></div>
           </div>
           <div class="mb-4 space-y-4">
-            <% @user.links.each do |link| %>
+            <% @links.each do |link| %>
             <div class="relative h-[57px] border-2 border-white bg-white text-black shadow sm:h-[60px]">
               <%= link_to link.url, target: "__blank", class: "flex size-full items-center justify-center" do %>
                 <div class="absolute inset-y-0 left-2 flex items-center justify-center">

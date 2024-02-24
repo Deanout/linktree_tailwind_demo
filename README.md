@@ -36,3 +36,4 @@ https://github.com/achaconm2001/linktree-ui-deanout/blob/main/src/app/login/page
 https://v1.tailwindcss.com/components/cards
 https://tw-elements.com/docs/standard/forms/login-form/#
 https://webcrunch.com/posts/svg-icons-with-ruby-on-rails
+https://tailwindcss.com/docs/

@@ -2,7 +2,7 @@
   <span class="link-text" 
                 data-action="click->edit-link#showForm" 
     data-edit-link-target="content"><%= link.url %></span>
-  <div class="edit-form d-none" data-edit-link-target="form">
+  <div class="edit-form hidden" data-edit-link-target="form">
     <%= form_with model: link, 
                   url: link_path(link), 
                   data: { turbo: true } do |f| %>
