@@ -5,7 +5,7 @@
     <div>
       <% if current_user %>
         <%= current_user.email %>
-        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" %>
       <% end %>
       <%= render partial: "links/form", locals: { link: Link.new } %>
       <div id="links" 

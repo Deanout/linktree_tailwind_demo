@@ -10,9 +10,7 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow space-x-4">
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-        Home
-      </a>
+      <%= link_to "Home", root_path, class: "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white" %>
       <%= link_to "Appearance", admin_appearance_path, class: "block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white" %>
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
         Analytics

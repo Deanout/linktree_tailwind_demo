@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :links, dependent: :destroy
 
+  has_one_attached :content
+
   extend FriendlyId
   friendly_id :username, use: :slugged
 
