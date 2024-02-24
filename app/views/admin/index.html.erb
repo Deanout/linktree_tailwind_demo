@@ -7,6 +7,15 @@
         <%= current_user.email %>
         <%= button_to "Logout", destroy_user_session_path, method: :delete %>
       <% end %>
+      <%= render partial: "links/form", locals: { link: Link.new } %>
+      <div id="links" 
+        data-controller="sortable" 
+        data-sortable-resource-name-value="link"
+        data-sortable-handle-value=".link_handle">
+        <% @links.each do |link| %>
+          <%= render partial: "links/admin_link", locals: { link: link } %>
+        <% end %>
+      </div>
     </div>
     <div>
       test

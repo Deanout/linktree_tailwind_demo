@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   get 'admin/appearance'
   get 'admin/analytics'
   get 'admin/settings'
+
+  resources :links, only: %i[create update destroy] do
+    patch 'toggle_active', on: :member
+  end
+
+  patch '/link_position/:id', to: 'links#update_position', as: :link_position
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

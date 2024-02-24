@@ -72,3 +72,7 @@ end
 
 # Custom Gems
 gem "devise"
+
+gem "acts_as_list", "~> 1.1"
+
+gem "inline_svg", "~> 1.9"
