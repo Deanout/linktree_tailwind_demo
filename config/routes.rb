@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
   get 'admin/index'
   get 'admin/appearance'
   get 'admin/analytics'
   get 'admin/settings'
+  patch 'admin/update', to: 'admin#update', as: :admin_update
+
+
+  get '/:slug', to: 'profiles#show', as: :user
 
   resources :links, only: %i[create update destroy] do
     patch 'toggle_active', on: :member

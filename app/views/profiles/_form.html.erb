@@ -1,0 +1,9 @@
+<%= form_with(model: current_user, url: admin_update_path) do |f| %>
+  <%= f.text_field :username, required: true, placeholder: "Username..." %>
+  <br />
+  <%= f.text_field :name, placeholder: "Name..." %>
+  <br />
+  <%= f.text_area :bio, placeholder: "About you..." %>
+  <br />
+  <%= f.submit "Update" %>
+<% end %>
