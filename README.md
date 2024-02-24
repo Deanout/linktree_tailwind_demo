@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Note
+First, deploying with Kamal requires this command to not go boom:
+```bash
+bundle lock --add-platform aarch64-linux
+```
 
-Things you may want to cover:
+# Commands
+Generated the admin controller
+```bash
+rails g controller admin index appearance analytics settings
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bundle add devise
+```
