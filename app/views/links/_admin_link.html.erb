@@ -4,10 +4,10 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">
-          <%= icon "grip-vertical", variant: "solid", classes: "link_handle" %><%= link.name %></h5>
+          <%= icon "grip-vertical", variant: "solid", classes: "link_handle" %><%= render partial: "links/inline_name_form", locals: { link: link } %></h5>
         <div class="row">
           <div class="col-8 link-centered">
-            <%= render partial: "links/inline_form", locals: { link: link } %>
+            <%= render partial: "links/inline_url_form", locals: { link: link } %>
           </div>
           <div class="col-4">
             <%#= render "links/link_actions", link: link %>

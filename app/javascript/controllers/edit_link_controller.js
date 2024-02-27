@@ -15,15 +15,14 @@ export default class extends Controller {
   }
 
   toggleForm(hidden) {
-    let content = this.contentTarget;
-    let form = this.formTarget;
+    console.log("Toggling form")
     const hiddenClass = "hidden";
     if (hidden) {
-      content.classList.remove(hiddenClass);
-      form.classList.add(hiddenClass);
+      this.contentTarget.classList.remove(hiddenClass);
+      this.formTarget.classList.add(hiddenClass);
       return;
     }
-    content.classList.add(hiddenClass);
-    form.classList.remove(hiddenClass);
+    this.contentTarget.classList.add(hiddenClass);
+    this.formTarget.classList.remove(hiddenClass);
   }
 }

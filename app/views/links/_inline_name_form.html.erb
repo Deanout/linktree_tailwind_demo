@@ -1,12 +1,12 @@
-<turbo-frame id="link_url_<%= link.id %>" data-controller="edit-link">
+<turbo-frame id="link_name_<%= link.id %>" data-controller="edit-link">
   <span class="link-text" 
                 data-action="click->edit-link#showForm" 
-    data-edit-link-target="content"><%= link.url %></span>
+    data-edit-link-target="content"><%= link.name %></span>
   <div class="edit-form hidden" data-edit-link-target="form">
     <%= form_with model: link, 
                   url: link_path(link), 
                   data: { turbo: true } do |f| %>
-      <%= f.text_field :url %>
+      <%= f.text_field :name %>
       <%= link_to "Cancel", nil, data: {
                     edit_link_target: "Cancel", 
                     action: "click->edit-link#hideForm"},
@@ -14,4 +14,4 @@
       <%= f.submit "Update", class:"btn btn-primary" %>
     <% end %>
   </div>
-</turobo-frame>
+</turbo-frame>
