@@ -28,6 +28,8 @@ rails g devise user
 # TODO
 IFrame needs default size, looks ridiculous with no links.
 Creating links should use Turbo because page reloads are cringe.
+There's no way to set links to active, so that's a problem.
+Toggle active for links
 
 # ACCESIBILITY EVERYWHERE
 

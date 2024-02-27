@@ -13,10 +13,9 @@
 
 */
 
-
-.video-player {
-  /* 16:9 aspect ratio please */
-  /* Width of idk, 1/3? */
-  width: 33.3333%;
-
+.iframe_container {
+  height: 40vh;
+  min-height: 700px;
+  max-width: 400px;
+  min-width: 300px;
 }

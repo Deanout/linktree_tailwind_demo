@@ -1,6 +1,6 @@
-<%= turbo_frame_tag "preview" do %>
+<%= turbo_frame_tag "preview", class: "h-full" do %>
   <iframe src="<%= profile_url(current_user) %>" 
-  class="rounded-2xl"
+  class="rounded-2xl h-full"
   style="border: 1rem solid #000;
     border-radius: 5%;
     padding: 10px;

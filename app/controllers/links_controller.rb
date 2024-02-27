@@ -7,7 +7,16 @@ class LinksController < ApplicationController
     @link = current_user.links.build(link_params)
 
     if @link.save
-      redirect_to admin_index_path, notice: 'Link was successfully created.'
+      # redirect_to admin_index_path, notice: 'Link was successfully created.'
+      respond_to do |format|
+        # format.html
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.append(
+            'links',
+            partial: 'links/admin_link',
+            locals: { link: @link })
+        end
+      end
     else
       redirect_to admin_index_path, notice: 'Link was not created.'
     end
