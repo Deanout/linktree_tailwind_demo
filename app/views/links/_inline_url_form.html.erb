@@ -7,7 +7,7 @@
                   url: link_path(link), 
                   data: { turbo: true } do |f| %>
       <%= f.text_field :url %>
-      <%= link_to "Cancel", nil, data: {
+      <%= link_to "Cancel", "", data: {
                     edit_link_target: "Cancel", 
                     action: "click->edit-link#hideForm" },
                     class: "btn btn-secondary" %>
