@@ -2,13 +2,13 @@
 service: deanout
 
 # Name of the container image.
-image: deanin/godot-video
+image: deanin/linktree_demo
 
 # Deploy to these servers.
 servers:
   web:
     hosts:
-      - 157.245.122.97
+      - 174.138.90.187
     labels:
       traefik.http.routers.deanout_secure.entrypoints: websecure
       traefik.http.routers.deanout_secure.rule: Host(`deanout.com`)

@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["content", "form"];
   connect() {
-    console.log("Connected the Edit Link Controller");
+    // console.log("Connected the Edit Link Controller");
   }
 
   showForm(event) {

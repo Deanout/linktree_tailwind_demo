@@ -11,7 +11,7 @@ https://lucide.dev/icons/grip-vertical
 
 First, deploying with Kamal requires this command to not go boom:
 ```bash
-bundle lock --add-platform aarch64-linux
+  bundle lock --add-platform aarch64-linux
 ```
 
 Generated the admin controller
@@ -26,7 +26,11 @@ rails g devise user
 ```
 
 # TODO
-
+Link Form needs to be reset after creating a link.
+Copy links with a button.
+Copy button needs to make a toast pop up.
+Add emails for the devise stuff.
+Sort Button
 
 # ACCESIBILITY EVERYWHERE
 

@@ -8,6 +8,7 @@ class Link < ApplicationRecord
 
   after_create_commit :broadcast_create_link
   after_update_commit :replace_all_links
+  after_destroy_commit :delete_link
 
 
   private
@@ -24,10 +25,22 @@ class Link < ApplicationRecord
   end
 
   def replace_all_links
+    replace_links
+  end
+
+  def delete_link
+    replace_links
+  end
+
+  def replace_links
     broadcast_replace_to "profile_links_#{user_id}",
       target: "links_container",
       partial: "profiles/links",
       locals: { links: user.links.where(active: true).order(position: :asc) }
-  end
 
+    broadcast_replace_to "admin_links_#{user_id}",
+      target: "links",
+      partial: "links/admin_links",
+      locals: { links: user.links }
+  end
 end
