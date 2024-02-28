@@ -26,11 +26,12 @@ rails g devise user
 ```
 
 # TODO
+Clean up the admin links because they look cringe.
 Link Form needs to be reset after creating a link.
 Copy links with a button.
 Copy button needs to make a toast pop up.
 Add emails for the devise stuff.
-Sort Button
+Sort Button for links would be nice.
 
 # ACCESIBILITY EVERYWHERE
 

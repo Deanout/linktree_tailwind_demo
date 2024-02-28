@@ -1,11 +1,14 @@
-<div class="row justify-content-end">
-  <div class="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
+<div class="grid grid-rows-2">
+  <div class="grid grid-cols-2">
     <%= render partial: "links/share_button", locals: { url: url_for(link.url) } %>
+    <%= render partial: "links/inline_active_toggle_form", locals: { link: link } %>
   </div>
-  <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-center">
-    <div class="form-check form-switch custom-switch-center">
-      <%#= render partial: "links/admin_active_toggle", locals: { link: link } %>
-      <%= render partial: "links/inline_active_toggle_form", locals: { link: link } %>
-    </div>
+  <div  class="grid grid-cols-2">
+    <%= link_to url_for(link.url), target: "__blank", class: "text-gray-500 font-bold py-2 px-4 rounded", method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= icon "eye", variant: "outline", class: "link_handle" %>
+    <% end %>
+    <%= button_to link, class: "text-gray-500 font-bold py-2 px-4 rounded", method: :delete, data: { confirm: "Are you sure?" } do %>
+      <%= icon "trash-2", variant: "outline", class: "link_handle" %>
+    <% end %>
   </div>
 </div>
