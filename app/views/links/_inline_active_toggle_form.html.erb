@@ -1,0 +1,7 @@
+<turbo-frame id="link_active_toggle_<%= link.id %>">
+  <%= form_with model: link, 
+                  url: link_path(link), 
+                  data: { turbo: true }, format: :turbo_stream do |f| %>
+    <%= f.check_box :active, class: "form-check-input", onchange: "this.form.requestSubmit();" %>
+  <% end %>
+</turbo-frame>

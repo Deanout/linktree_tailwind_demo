@@ -1,0 +1,18 @@
+<section class="h-full w-full">
+  <div class="grid grid-cols-2 gap-10">
+    <!-- Each <div> is a single column.
+	Place some content inside to see the effect. -->
+    <div>
+      <% if current_user %>
+        <%= current_user.email %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" %>
+      <% end %>
+      <%= turbo_stream_from "admin_links_#{current_user.id}" %>
+      <%= render partial: "links/form", locals: { link: Link.new } %>
+      <%= render partial: "links/admin_links", locals: { links: @links } %>
+    </div>
+    <div class="iframe_container">
+      <%= render "admin/iframe_preview" %>
+    </div>
+  </div>
+</section>

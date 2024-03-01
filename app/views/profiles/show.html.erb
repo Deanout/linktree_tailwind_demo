@@ -1,0 +1,82 @@
+<div class="min-h-screen w-screen bg-[#012141] overflow-y-auto">
+  <div class="fixed inset-x-0 mx-auto my-2 mt-2.5 grid w-full max-w-[788px] grid-cols-3 items-center rounded-full border border-transparent bg-transparent py-2 pl-3 pr-6 transition duration-150 ease-in-out sm:p-3 sm:pt-4">
+    <button class="col-start-3 flex size-[40px] cursor-pointer flex-col items-center justify-center justify-self-end rounded-[50%] border border-[#E2E2E2] bg-[#F0F0F0] text-black transition-colors hover:bg-[#EBEBEB] focus:border-[#D2D2D2] focus:outline-none active:bg-[#E2E2E2] active:text-black">
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <path
+          fill="black"
+          stroke="black"
+          d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"
+        ></path>
+        <path
+          fill="black"
+          stroke="black"
+          d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"
+        ></path>
+        <path
+          fill="black"
+          stroke="black"
+          d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <div class="px-4 pb-8 pt-16">
+    <div class="mx-auto max-w-[680px]">
+      <div>
+        <div class="mb-4">
+          <% if @user.content.attached? %>
+            <% if @user.content.content_type == "image/png" || @user.content.content_type == "image/jpeg" %>
+              <%= image_tag(url_for(@user.content), style: "mx-auto block size-24 rounded-full object-contain") %>
+            <% else %>
+              <%= video_tag(@user.content, controls: "", class: "mx-auto block size-fit rounded-lg aspect-video") %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="mx-3 flex h-[30px] items-center justify-center truncate text-center text-[20px] font-bold leading-6 text-white">
+          <%= @user.name %>
+        </div>
+        <div class="mt-1 px-10 text-center text-sm font-medium leading-[1.5] text-white sm:text-base">
+          <%= @user.bio %>
+        </div>
+        <div class="mt-8">
+          <div class="mb-4">
+            <div class="text-center font-bold text-white"><%= @user.username %></div>
+          </div>
+          <div class="mb-4 space-y-4">
+            <%= turbo_stream_from "profile_links_#{@user.id}" %>
+            <%= render partial: "profiles/links", locals: { links: @links } %>
+          </div>
+          <div class="flex items-center justify-center pt-[57px]">
+            <%= link_to root_path, target: "__blank", class: "relative box-content flex h-12 items-center justify-center rounded-[64px] border-[#C0C8D1] bg-[#C0C8D1] px-4 text-black antialiased outline-none transition duration-75 ease-out hover:!bg-white focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" do %>
+              <svg
+                viewBox="0 0 16 16"
+                enableBackground="new 0 0 24 24"
+                class="mr-2 size-4"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 20 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.259 4.87786L14.5965 1.44702L16.5336 3.43084L13.0327 6.76832H17.9573V9.52233H13.0094L16.5336 12.9454L14.5965 14.8903L9.81195 10.0825L5.02745 14.8903L3.09031 12.9532L6.6145 9.53011H1.66663V6.76832H6.59116L3.09031 3.43084L5.02745 1.44702L8.36493 4.87786V0H11.259V4.87786ZM8.36493 13.4666H11.259V20.0016H8.36493V13.4666Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </svg>
+              <span class="block text-base font-semibold leading-[1.5] tracking-[-.32px]">
+                <% if current_user %>
+                  Go to your Linktree
+                <% else %>
+                  Create your Linktree
+                <% end %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,9 +10,6 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render "shared/navbar" if @display_nav %>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <%= yield %>
   </body>
 </html>

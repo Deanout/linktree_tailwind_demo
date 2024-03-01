@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Note
+Grabbed navbar from here:
+https://v1.tailwindcss.com/components/navigation
 
-Things you may want to cover:
+Get Icons from here:
+https://lucide.dev/icons/grip-vertical
 
-* Ruby version
+# Commands
 
-* System dependencies
+First, deploying with Kamal requires this command to not go boom:
+```bash
+  bundle lock --add-platform aarch64-linux
+```
 
-* Configuration
+Generated the admin controller
+```bash
+rails g controller admin index appearance analytics settings
+```
 
-* Database creation
+```bash
+bundle add devise
+rails g devise:install
+rails g devise user
+```
 
-* Database initialization
+# TODO
+Link Form needs to be reset after creating a link.
+Copy links with a button.
+Copy button needs to make a toast pop up.
+Add emails for the devise stuff.
+Sort Button
 
-* How to run the test suite
+# ACCESIBILITY EVERYWHERE
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# Sources
+https://v1.tailwindcss.com/components/cards
+https://tw-elements.com/docs/standard/forms/login-form/#
+https://webcrunch.com/posts/svg-icons-with-ruby-on-rails
+https://tailwindcss.com/docs/
+Email Resend
+https://resend.com/ 
 
-* ...
+# References
+Fix login page (Courtesy of Chamir)
+https://github.com/achaconm2001/linktree-ui-deanout/blob/main/src/app/login/page.tsx#L159

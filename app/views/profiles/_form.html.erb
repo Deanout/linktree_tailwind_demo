@@ -1,0 +1,12 @@
+<%= form_with(model: current_user, url: admin_update_path) do |f| %>
+  <%= f.text_field :username, required: true, placeholder: "Username..." %>
+  <br />
+  <%= f.label :content %>
+  <%= f.file_field :content %>
+  <br />
+  <%= f.text_field :name, placeholder: "Name..." %>
+  <br />
+  <%= f.text_area :bio, placeholder: "About you..." %>
+  <br />
+  <%= f.submit "Update", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+<% end %>

@@ -1,0 +1,35 @@
+# Name of your application. Used to uniquely configure containers.
+service: deanout
+
+# Name of the container image.
+image: deanin/linktree_demo
+
+# Deploy to these servers.
+servers:
+  web:
+    hosts:
+      - 174.138.90.187
+    labels:
+      traefik.http.routers.deanout_secure.entrypoints: websecure
+      traefik.http.routers.deanout_secure.rule: Host(`deanout.com`)
+      traefik.http.routers.deanout_secure.tls: true
+
+# Credentials for your image host.
+registry:
+  username: deanin
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+
+traefik:
+  options:
+    publish:
+      - "443:443"
+  args:
+    entryPoints.websecure.address: ":443"
+
+volumes:
+  - "storage:/rails/storage"
