@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :themes
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  get 'admin/sort', to: 'admin#sort', as: :admin_sort
 
   get 'admin/index'
   get 'admin/appearance'

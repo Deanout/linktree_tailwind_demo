@@ -8,7 +8,7 @@ image: deanin/linktree_demo
 servers:
   web:
     hosts:
-      - 174.138.90.187
+      - 167.172.244.191
     labels:
       traefik.http.routers.deanout_secure.entrypoints: websecure
       traefik.http.routers.deanout_secure.rule: Host(`deanout.com`)

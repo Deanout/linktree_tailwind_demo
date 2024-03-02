@@ -26,12 +26,16 @@ rails g devise user
 ```
 
 # TODO
-Clean up the admin links because they look cringe.
-Link Form needs to be reset after creating a link.
-Copy links with a button.
-Copy button needs to make a toast pop up.
 Add emails for the devise stuff.
-Sort Button for links would be nice.
+Sort Button working without refreshing would be nice.
+Change Iframe border to be an actual phone
+
+# Bugs
+Clicking bottom checkbox causes top to highlight.
+
+
+# TOTHINK
+so for the links on the page, do you plan on fetching the favicon or are you going to use some default icon depending on the url?
 
 # ACCESIBILITY EVERYWHERE
 

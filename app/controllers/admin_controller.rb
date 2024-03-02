@@ -10,6 +10,13 @@ class AdminController < ApplicationController
   end
 
   def analytics
+    @daily_profile_views = current_user.daily_profile_views
+    @daily_link_clicks = current_user.daily_link_clicks
+    @daily_device_views = current_user.daily_views_by_device_type
+
+    @daily_device_views_by_type = @daily_device_views.map do |device, count|
+      { name: device.to_s, data: count }
+    end
   end
 
   def settings
@@ -18,6 +25,18 @@ class AdminController < ApplicationController
   def update
     current_user.update(user_params)
     redirect_to admin_appearance_path
+  end
+
+  def sort
+    # Sort the user's links alphabetically and then update the position attribute
+    @links = current_user.links.order("LOWER(name)")
+
+    @links.each_with_index do |link, index|
+      link.insert_at(index + 1)
+      puts "Link #{link.name} has been updated to position #{link.position}"
+    end
+
+    redirect_to admin_index_path
   end
 
   private

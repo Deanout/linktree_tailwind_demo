@@ -6,21 +6,31 @@ export default class extends Controller {
 
   connect() {
     // Grab the url from the data-url attribute
-    this.urlValue = this.linkTarget.getAttribute("data-url");
-    console.log(this.urlValue)
-    console.log(this.shareTarget)
+    this.urlValue = this.element.getAttribute("data-url");
   }
 
   // Copy to clipboard action
   copy(e) {
     e.preventDefault();
     const url = this.urlValue;
-    console.log(url)
     navigator.clipboard.writeText(url).then(() => {
       // Change the link text to "Copied!" for 2 seconds
       this.shareTarget.textContent = "Copied!";
       setTimeout(() => {
         this.shareTarget.textContent = "Share";
+      }, 2000);
+    });
+  }
+
+  share(e) {
+    e.preventDefault();
+    const url = this.urlValue;
+    console.log(url)
+    navigator.clipboard.writeText(url).then(() => {
+      // Change the link text to "Copied!" for 2 seconds
+      // this.shareTarget.textContent = "Copied!";
+      setTimeout(() => {
+        // this.shareTarget.textContent = "Share";
       }, 2000);
     });
   }

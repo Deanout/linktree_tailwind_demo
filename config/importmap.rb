@@ -10,3 +10,4 @@ pin "@rails/request.js", to: "@rails--request.js.js" # @0.0.8
 pin "sortablejs" # @1.15.2
 pin "stimulus-sortable" # @4.1.1
 pin "lucide" # @0.341.0
+pin "ahoy.js" # @0.4.3

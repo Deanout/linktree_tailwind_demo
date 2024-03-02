@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "faker"
 end
 
 group :development do
@@ -78,3 +79,7 @@ gem "acts_as_list", "~> 1.1"
 gem "inline_svg", "~> 1.9"
 
 gem "friendly_id", "~> 5.5"
+
+gem "ahoy_matey"
+gem "apexcharts"
+gem "groupdate"

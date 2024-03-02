@@ -4,7 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["content", "form"];
   connect() {
-    // console.log("Connected the Edit Link Controller");
   }
 
   showForm(event) {
@@ -15,7 +14,6 @@ export default class extends Controller {
   }
 
   toggleForm(hidden) {
-    console.log("Toggling form")
     const hiddenClass = "hidden";
     if (hidden) {
       this.contentTarget.classList.remove(hiddenClass);

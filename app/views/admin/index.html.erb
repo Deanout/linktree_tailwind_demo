@@ -3,12 +3,12 @@
     <!-- Each <div> is a single column.
       Place some content inside to see the effect. -->
     <div>
-      <% if current_user %>
-        <%= current_user.email %>
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" %>
-      <% end %>
       <%= turbo_stream_from "admin_links_#{current_user.id}" %>
       <%= render partial: "links/form", locals: { link: Link.new } %>
+      <div class="grid grid-cols-2">
+        <div></div>
+        <%= link_to "Sort", admin_sort_path, data: { turbo: :false },  class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      </div>
       <%= render partial: "links/admin_links", locals: { links: @links } %>
     </div>
     <div class="iframe_container">
