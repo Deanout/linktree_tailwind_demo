@@ -29,6 +29,7 @@ rails g devise user
 Add emails for the devise stuff.
 Sort Button working without refreshing would be nice.
 Change Iframe border to be an actual phone
+Change sort button
 
 # Bugs
 Clicking bottom checkbox causes top to highlight.
