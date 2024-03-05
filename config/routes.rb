@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   patch '/link_position/:id', to: 'links#update_position', as: :link_position
-
+  patch 'admin/update_theme', to: 'admin#update_theme', as: :admin_update_theme
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

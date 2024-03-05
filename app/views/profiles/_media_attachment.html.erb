@@ -1,0 +1,7 @@
+<% if @user.content.attached? %>
+  <% if @user.content.content_type == "image/png" || @user.content.content_type == "image/jpeg" %>
+    <%= image_tag(url_for(@user.content), class: "mx-auto block size-24 rounded-full") %>
+  <% else %>
+    <%= video_tag(@user.content, controls: "", class: "mx-auto block size-fit rounded-lg aspect-video") %>
+  <% end %>
+<% end %>

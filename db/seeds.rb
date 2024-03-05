@@ -8,8 +8,22 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require 'open-uri'
+Ahoy::Event.destroy_all
+Ahoy::Visit.destroy_all
+Theme.destroy_all
 
-Ahoy::Event.destroy_all && Ahoy::Visit.destroy_all
+Theme.create(name: 'Space', theme_type: 'dark', css_value: '--space-theme')
+Theme.create(name: 'Light', theme_type: 'light', css_value: '--light-theme')
+default_theme_id = Theme.default_theme&.id
+
+theme_params = { admin_theme_id: default_theme_id,
+                 profile_theme_id: default_theme_id }.compact_blank
+
+user = User.new(username: 'dean',
+  email: 'dean@example.com',
+  password: 'password',
+  **theme_params)
+
 class RequestFaker
   attr_reader :params, :content_length, :body, :remote_ip, :original_url, :user_agent, :cookies, :referer, :headers,
               :cookie_jar

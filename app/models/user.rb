@@ -22,6 +22,9 @@ class User < ApplicationRecord
   validate :username_not_reserved
   validate :email_not_reserved
 
+  belongs_to :profile_theme, class_name: 'Theme', foreign_key: 'profile_theme_id', optional: true
+  belongs_to :admin_theme, class_name: 'Theme', foreign_key: 'admin_theme_id', optional: true
+
   attr_writer :login
 
   def login
@@ -46,10 +49,6 @@ class User < ApplicationRecord
   end
 
   def daily_views_by_device_type
-    # Filter by last 7 days
-    # daily_views_by_device_type = Ahoy::Event.joins(:visit).where(name: 'Viewed Dashboard', user_id: id)
-    #                                         # .where('time > ? AND time < ?', 7.days.ago, Time.now)
-    #                                         .group('visits.device_type').count
     visits.group(:device_type).count
   end
 

@@ -3,17 +3,30 @@
     <strong class="block font-medium mb-1">Name:</strong>
     <%= theme.name %>
   </p>
-
   <p class="my-5">
     <strong class="block font-medium mb-1">Theme type:</strong>
     <%= theme.theme_type %>
   </p>
-
   <p class="my-5">
     <strong class="block font-medium mb-1">Css value:</strong>
     <%= theme.css_value %>
   </p>
-
+  <p class="my-5">
+    <strong class="block font-medium mb-1">background_color:</strong>
+    <%= theme.background_color %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">font_color:</strong>
+    <%= theme.font_color %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">link_color:</strong>
+    <%= theme.link_color %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">link_font_color:</strong>
+    <%= theme.link_font_color %>
+  </p>
   <% if action_name != "show" %>
     <%= link_to "Show this theme", theme, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Edit this theme", edit_theme_path(theme), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

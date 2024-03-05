@@ -1,6 +1,9 @@
 <section class="w-full h-screen">
   <div class="grid grid-cols-2 gap-10 h-full">
-    <%= render "profiles/form" %>
+    <div class="grid grid-rows-2">
+      <%= render "profiles/form" %>
+      <%= render partial: "themes/profile_theme_selector" %>
+    </div>
     <div class="iframe_container">
       <%= render "admin/iframe_preview" %>
     </div>

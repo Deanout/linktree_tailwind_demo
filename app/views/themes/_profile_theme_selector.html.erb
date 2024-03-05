@@ -1,0 +1,7 @@
+<%= form_with(model: current_user, url: admin_update_theme_url) do |f| %>
+  <!-- Dropdown select theme by name but send id of theme back to server. -->
+  <%= f.collection_select :profile_theme_id, Theme.all.uniq, :id, :name, prompt: true %>
+  <div class="form-actions">
+    <%= f.submit "Save", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  </div>
+<% end %>

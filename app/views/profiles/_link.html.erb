@@ -1,6 +1,6 @@
 <%# dom_id => link_id %>
 <%= turbo_frame_tag dom_id(link) do %>
-  <div class="relative h-[57px] border-2 border-white bg-white text-black shadow sm:h-[60px]">
+  <div class="relative h-[57px] border-2 border-white <%= @user.profile_theme.link_color %> <%= @user.profile_theme.link_font_color %> shadow sm:h-[60px]">
     <%= link_to link.url, target: "__blank", class: "flex size-full items-center justify-center" do %>
       <div class="absolute inset-y-0 left-2 flex items-center justify-center">
         <img
